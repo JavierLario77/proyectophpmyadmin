@@ -1,0 +1,74 @@
+App\Entity\Pedidos:
+    type: entity
+    table: pedidos
+    indexes:
+        Pedidos_Cliente:
+            columns:
+                - CodigoCliente
+    id:
+        codigopedido:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: CodigoPedido
+            generator:
+                strategy: IDENTITY
+    fields:
+        fechapedido:
+            type: date
+            nullable: false
+            column: FechaPedido
+        fechaesperada:
+            type: date
+            nullable: false
+            column: FechaEsperada
+        fechaentrega:
+            type: date
+            nullable: true
+            column: FechaEntrega
+        estado:
+            type: string
+            nullable: false
+            length: 15
+            options:
+                fixed: false
+            column: Estado
+        comentarios:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+            column: Comentarios
+    manyToOne:
+        codigocliente:
+            targetEntity: Clientes
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                CodigoCliente:
+                    referencedColumnName: CodigoCliente
+            orphanRemoval: false
+    manyToMany:
+        codigoproducto:
+            targetEntity: Productos
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: codigopedido
+            joinTable:
+                name: detallepedidos
+                joinColumns:
+                    -
+                        name: CodigoPedido
+                        referencedColumnName: CodigoPedido
+                inverseJoinColumns:
+                    -
+                        name: CodigoProducto
+                        referencedColumnName: CodigoProducto
+            orderBy: null
+    lifecycleCallbacks: {  }

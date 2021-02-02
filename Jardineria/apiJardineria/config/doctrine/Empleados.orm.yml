@@ -1,0 +1,85 @@
+App\Entity\Empleados:
+    type: entity
+    table: empleados
+    indexes:
+        Empleados_OficinasFK:
+            columns:
+                - CodigoOficina
+        Empleados_EmpleadosFK:
+            columns:
+                - CodigoJefe
+    id:
+        codigoempleado:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: CodigoEmpleado
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombre:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+            column: Nombre
+        apellido1:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+            column: Apellido1
+        apellido2:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+            column: Apellido2
+        extension:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+            column: Extension
+        email:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: Email
+        puesto:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+            column: Puesto
+    manyToOne:
+        codigojefe:
+            targetEntity: Empleados
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                CodigoJefe:
+                    referencedColumnName: CodigoEmpleado
+            orphanRemoval: false
+        codigooficina:
+            targetEntity: Oficinas
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                CodigoOficina:
+                    referencedColumnName: CodigoOficina
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

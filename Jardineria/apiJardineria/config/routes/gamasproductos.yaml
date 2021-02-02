@@ -1,0 +1,7 @@
+listar:
+  path: /listar
+  controller: App\Controller\GamasproductosController::listar
+
+registrargama:
+  path: /registerGama
+  controller: App\Controller\GamasproductosController::registerGama

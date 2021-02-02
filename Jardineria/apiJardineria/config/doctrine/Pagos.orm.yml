@@ -1,0 +1,48 @@
+App\Entity\Pagos:
+    type: entity
+    table: pagos
+    indexes:
+        IDX_DA9B0DFFF0EA123:
+            columns:
+                - CodigoCliente
+    id:
+        idtransaccion:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+            id: true
+            column: IDTransaccion
+        codigocliente:
+            associationKey: true
+    fields:
+        formapago:
+            type: string
+            nullable: false
+            length: 40
+            options:
+                fixed: false
+            column: FormaPago
+        fechapago:
+            type: date
+            nullable: false
+            column: FechaPago
+        cantidad:
+            type: decimal
+            nullable: false
+            precision: 15
+            scale: 2
+            column: Cantidad
+    oneToOne:
+        codigocliente:
+            targetEntity: Clientes
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                CodigoCliente:
+                    referencedColumnName: CodigoCliente
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

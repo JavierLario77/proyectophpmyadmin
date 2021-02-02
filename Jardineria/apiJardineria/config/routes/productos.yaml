@@ -1,0 +1,12 @@
+listarProductos:
+  path: /listarProductos
+  controller: App\Controller\ProductosController::listarProductos
+detallesProductos:
+  path: /detallesProductos
+  controller: App\Controller\ProductosController::detallesProductos
+registerProducto:
+  path: /registerProducto
+  controller: App\Controller\ProductosController:registerProducto
+actualizarCoordenadas:
+  path: /actualizarCoordenadas
+  controller: App\Controller\ProductosController:actualizarCoordenadas

@@ -1,0 +1,22 @@
+login:
+  path: /login
+  controller: App\Controller\UsuariosController::login
+
+register:
+  path: /register
+  controller: App\Controller\UsuariosController::register
+
+fotoGama:
+  path: /uploadSingleImageGama
+  controller: App\Controller\UsuariosController::uploadSingleImageGama
+
+fotoPerfil:
+  path: /uploadSingleImagePerfil
+  controller: App\Controller\UsuariosController::uploadSingleImagePerfil
+
+actualizar:
+  path: /actualizar
+  controller: App\Controller\UsuariosController::actualizar
+fotoProducto:
+  path: /uploadSingleImageProducto
+  controller: App\Controller\UsuariosController::uploadSingleImageProducto

@@ -1,0 +1,38 @@
+App\Entity\Gamasproductos:
+    type: entity
+    repositoryClass: App\Repository\GamasproductosRepository
+    table: gamasproductos
+    id:
+        gama:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+            id: true
+            column: Gama
+            generator:
+                strategy: IDENTITY
+    fields:
+        descripciontexto:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+            column: DescripcionTexto
+        descripcionhtml:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+            column: DescripcionHTML
+        icono:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: Icono
+    lifecycleCallbacks: {  }

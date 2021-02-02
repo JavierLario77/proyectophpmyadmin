@@ -1,0 +1,65 @@
+App\Entity\Oficinas:
+    type: entity
+    table: oficinas
+    id:
+        codigooficina:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+            id: true
+            column: CodigoOficina
+            generator:
+                strategy: IDENTITY
+    fields:
+        ciudad:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: Ciudad
+        pais:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+            column: Pais
+        region:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+            column: Region
+        codigopostal:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+            column: CodigoPostal
+        telefono:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: Telefono
+        lineadireccion1:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+            column: LineaDireccion1
+        lineadireccion2:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+            column: LineaDireccion2
+    lifecycleCallbacks: {  }

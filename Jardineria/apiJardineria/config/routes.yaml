@@ -1,0 +1,14 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+usuarios:
+  resource: "./routes/usuarios.yaml"
+  prefix: /
+
+gamasproductos:
+  resource: "./routes/gamasproductos.yaml"
+  prefix: /gamasproductos
+
+productos:
+  resource: "./routes/productos.yaml"
+  prefix: /productos
